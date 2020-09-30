@@ -15,7 +15,7 @@ old_strongs_unused = re.compile(
 )
 
 
-srg_unused = re.compile(
+#srg_unused = re.compile(
 	'<a name="[^"]*">[^<]*</a> *'
 	'Not Used'
 )
@@ -65,7 +65,7 @@ transliteration_module = ModuleCreator("HeadwordsTransliterated",
 	working_directory="resources",	
 )
 
-pronunciation_module = ModuleCreator("HeadwordsPronunciation", 
+#pronunciation_module = ModuleCreator("HeadwordsPronunciation", 
 	driver=SW.RawLD, 
 	key_type=SW.Key, 
 	extra_attrs=dict(
@@ -109,7 +109,7 @@ bad_source_text = dict(
 
 	
 	
-old_bad_source_text = dict(
+old_bad#_source_text = dict(
 	H0530=(" 530  'emuwnah  em-oo-naw'); or (shortened) >emunah {em-oo-naw'\n\n\n feminine of 529; literally firmness; figuratively security;\n morally fidelity:--faith(-ful, -ly, -ness, (man)), set\n office, stability, steady, truly, truth, verily.\n see HEBREW for 0529",
 	" 530  'emuwnah  em-oo-naw'\n); or (shortened) >emunah {em-oo-naw'\n\n\n feminine of 529; literally firmness; figuratively security;\n morally fidelity:--faith(-ful, -ly, -ness, (man)), set\n office, stability, steady, truly, truth, verily.\n see HEBREW for 0529"),
 	G3379=(u" 3379  mepote   may'-pot-eh or\n       me pote  may pot'-eh\n\n\n from 3361 and 4218; not ever; also if (or lest) ever (or perhaps):--if\n peradventure, lest (at any time, haply), not at all, whether or not.\n see GREEK for 3361\n see GREEK for 4218",u" 3379  mepote   may'-pot-eh\n or\n       me pote  may pot'-eh\n\n\n from 3361 and 4218; not ever; also if (or lest) ever (or perhaps):--if\n peradventure, lest (at any time, haply), not at all, whether or not.\n see GREEK for 3361\n see GREEK for 4218"),
@@ -147,7 +147,7 @@ OK_ones = (
 # check that we can pre-increment as we know the first entry is bad...
 assert module.getKeyText()[0] not in "GH", "First entry wasn't bad?!? :("
 
-def read_from_strongs_real_greek():
+#def read_from_strongs_real_greek():
 	while greek.Error() == '\x00':
 		entry = greek.getRawEntry().decode("utf8")
 		key = "G" + greek.getKeyText()[1:]
@@ -213,7 +213,7 @@ def read_from_strongs_real_greek():
 		
 
 
-def gather_from_strong():
+#def gather_from_strong():
 	# start from here, as StrongsRealGreek for me tails off there.
 	module.KeyText("G5610")
 	while module.increment() or module.Error() == '\x00':
